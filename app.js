@@ -1,13 +1,12 @@
 const express = require("express"); // requiring express
 const app = express(); // assigning express to app
 const mongoose = require("mongoose"); // requiring mongoose
+const config = require('./config'); // importing database connection string
 const bookroutes = require("./routes/bookroutes"); // requiring book routes
 const { basicAuth, tokenAuth } = require("./auth/auth"); // requiring basicauth
 const userroutes = require("./routes/userroutes"); // requiring user routes
 const cors = require("cors"); // requiring cors policy
 
-const mongodburl =
-  "mongodb+srv://Afrozmak:vpgvp2yo@book-store-mern.kzsdodz.mongodb.net/book-connection?retryWrites=true&w=majority&appName=Book-Store-Mern"; // ye mongoose ki link hai
 
 // middleware for handling CORS policy here we have 2 options
 // 1st option allows all origins with default of cors(*) // aur ye hamesha routes k upper rehna re bhai nai toh bulle miljate
@@ -39,7 +38,7 @@ app.get("/", (req, res) => {
 
 //ya se mongodb ka kaam shuru
 mongoose
-  .connect(mongodburl)
+  .connect(config.dbconstr)
   .then(() => {
     console.log("app connected");
     app.listen(3000, () => {
