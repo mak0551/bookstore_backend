@@ -1,5 +1,5 @@
 module.exports = {
   jwtsecret: "secret123",
   dbconstr:
-    "mongodb+srv://Afrozmak:vpgvp2yo@book-store-mern.kzsdodz.mongodb.net/book-connection?retryWrites=true&w=majority&appName=Book-Store-Mern", // ye mongoose ki link hai
+    "mongodb+srv://mak551:Afroz123%40@bookstore.ej174.mongodb.net/bookstore", // ye mongoose ki link hai
 };

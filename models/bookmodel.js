@@ -5,13 +5,11 @@ const bookSchema = mongoose.Schema(
     title: {
       type: String,
       required: [true, 'title is mandatory'],
-      minlength: [3, 'title should be atleast 3 character'],
-      maxlength: [20, 'title cannot be more than 20 character']
+      maxlength: [30, 'title cannot be more than 20 character']
     },
     author: {
       type: String,
       required: [true, 'author is mandatory'],
-      minlength: [3, 'author should be atleast 3 character'],
       maxlength: [20, 'author cannot be more than 20 character']
     },
     publishYear: {

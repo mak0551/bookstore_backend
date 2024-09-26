@@ -2,7 +2,7 @@ const bookrepo = require("../repositories/bookrepo");
 
 const getAll = async (req, res) => {
   const currentpage = req.params.page || 1;
-  const pagesize = req.params.limit || 10;
+  const pagesize = req.params.limit || 20;
   const search = req.query.search || "";
   const sort = req.query.sort || "publishYear";
   const order = req.query.order || "desc";
