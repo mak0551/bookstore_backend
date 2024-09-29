@@ -30,11 +30,6 @@ app.use("/api/v1/users", userroutes);
 // private routes
 app.use("/api/v1/books", bookroutes); // getting routes
 
-app.get("/", (req, res) => {
-  console.log("home");
-  res.send("hi");
-});
-
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log("app listening on port 3000!"));
 
