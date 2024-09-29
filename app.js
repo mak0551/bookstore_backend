@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true })); // body parsar
 app.use("/api/v1/users", userroutes);
 
 // app.use(basicAuth);
-// app.use(tokenAuth);
+app.use(tokenAuth);
 
 // private routes
 app.use("/api/v1/books", bookroutes); // getting routes
