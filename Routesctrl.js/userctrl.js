@@ -29,6 +29,7 @@ const signin = async (req, res) => {
   try {
     const { email, password } = req.body;
     const dbuser = await userrepo.getuserbyemail(email); // yaha pe poore details aajate user k name email password etc
+
     if (!dbuser) {
       res.status(401).json({ message: "email not identified" });
       return;
@@ -38,9 +39,10 @@ const signin = async (req, res) => {
       const token = jwt.sign({ email: dbuser.email, role: dbuser.role }, config.jwtsecret, { expiresIn: '1h' } ); // here we are creating token
       res.status(200).json({token: token});
     } else {
-      res.status(401).json({ message: "password not identified" });
+      res.status(401).json({ message: "invalid password" });
     }
   } catch (err) {
+    // res.status(500).send(err);
     res.status(500).json({ message: "internal server error" });
   }
 };
